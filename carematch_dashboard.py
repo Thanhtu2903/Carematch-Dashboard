@@ -13,9 +13,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 carematch = pd.read_csv("carematch_requests.csv")
 
-!pip install yake
-
-!pip install streamlit pyngrok
+# Commented out IPython magic to ensure Python compatibility.
+# %%writefile requirements.txt
+# streamlit
+# pandas
+# matplotlib
+# seaborn
+# wordcloud
+# scikit-learn
+# yake
+#
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
@@ -316,6 +323,25 @@ carematch = pd.read_csv("carematch_requests.csv")
 # X_structured = scaler.fit_transform(structured)
 # 
 # X_cluster = hstack([X, X_structured])
+# # --- Clustering: Elbow Method ---
+# st.header("📉 Elbow Method for Optimal k")
+# 
+# inertia = []
+# K = range(2, 11)  # test k from 2 to 10 clusters
+# 
+# for k in K:
+#     kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)
+#     kmeans.fit(X_cluster)
+#     inertia.append(kmeans.inertia_)
+# 
+# # Plot elbow curve
+# fig, ax = plt.subplots(figsize=(8, 6))
+# ax.plot(K, inertia, "bo-")
+# ax.set_xlabel("Number of clusters (k)")
+# ax.set_ylabel("Inertia (Within-Cluster Sum of Squares)")
+# ax.set_title("Elbow Method for Optimal k")
+# 
+# st.pyplot(fig)
 # 
 # # --- Select k interactively ---
 # st.sidebar.subheader("⚙️ Clustering Parameters")
