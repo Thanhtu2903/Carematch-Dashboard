@@ -13,16 +13,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 carematch = pd.read_csv("carematch_requests.csv")
 
-# Commented out IPython magic to ensure Python compatibility.
-# %%writefile requirements.txt
-# streamlit
-# pandas
-# matplotlib
-# seaborn
-# wordcloud
-# scikit-learn
-# yake
-#
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
@@ -350,6 +340,7 @@ carematch = pd.read_csv("carematch_requests.csv")
 # # --- Perform clustering ---
 # kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)
 # carematch.loc[carematch["diagnosis"].notnull(), "cluster"] = kmeans.fit_predict(X_cluster)
+
 # 
 # # --- PCA visualization ---
 # st.subheader("📊 PCA Visualization of Clusters")
