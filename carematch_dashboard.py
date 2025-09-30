@@ -396,21 +396,3 @@ carematch = pd.read_csv("carematch_requests.csv")
 # 
 # 
 #
-
-from pyngrok import ngrok, conf
-ngrok.set_auth_token("33OwRDQaU2PUyIfsFbAToW0b2MW_6BPqEdPc1J99UqNwHedfD")
-
-from pyngrok import ngrok
-
-# Run Streamlit in background
-get_ipython().system_raw('streamlit run app.py --server.port 8501 &')
-
-# Create tunnel
-public_url = ngrok.connect(8501)
-print("🌍 Streamlit URL:", public_url)
-
-from pyngrok import ngrok
-
-# Disconnect all active ngrok tunnels
-ngrok.kill()
-print("Disconnected existing ngrok tunnels.")
